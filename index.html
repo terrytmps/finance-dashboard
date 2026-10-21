@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- Politique de sécurité : aucune requête vers un autre domaine n'est possible depuis l'app -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<title>Mon Budget</title>
+<meta name="description" content="Gestion financière personnelle, 100 % locale : salaire, abonnements, placements et patrimoine.">
+<meta name="theme-color" content="#f2f2f7">
+<meta name="color-scheme" content="light dark">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Budget">
+<meta name="format-detection" content="telephone=no">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="navbar" id="navbar">
+    <div class="navbar-inner">
+      <div class="nav-left" id="nav-left"></div>
+      <div class="nav-title" id="nav-title"></div>
+      <div class="nav-right" id="nav-right"></div>
+    </div>
+  </header>
+
+  <main id="view" class="view" aria-live="polite"></main>
+
+  <nav class="tabbar" id="tabbar" aria-label="Navigation principale"></nav>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <input type="file" id="import-file" accept="application/json,.json" hidden>
+
+  <noscript><p style="padding:24px;font-family:-apple-system,sans-serif">Cette application nécessite JavaScript.</p></noscript>
+  <script src="app.js"></script>
+</body>
+</html>
